@@ -1,22 +1,22 @@
+// adding required dependencies 
 const router = require("express").Router();
 const path = require('path');
 
-
-// ===== HTML ROUTES =====
-
-// get homepage
+// get route for homepage
 router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-// get exercises page
-router.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/exercise.html"));
-});
-
-// get stats page
+// get route for stats page
 router.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
+
+// get route for exercises page
+router.get("/exercise", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/exercise.html"));
+});
+
+// exporting module 
 module.exports = router;

@@ -1,7 +1,8 @@
+//adding required files and dependencies 
 const db = require("../models");
 const router = require("express").Router();
 
-// Add field for total duration of exercise using aggregate
+// using aggregate to add a field for duration of exercise 
 router.get("/api/workouts", (req, res) => {
   db.Workout.aggregate([
     {
@@ -19,7 +20,7 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-// Add exercise
+// Add an exercise
 router.put("/api/workouts/:id", (req, res) => {
   db.Workout.findOneAndUpdate(
     { _id: req.params.id },
@@ -35,7 +36,7 @@ router.put("/api/workouts/:id", (req, res) => {
     });
 });
 
-// Create workout
+// post route for Creating workout
 router.post("/api/workouts", ({ body }, res) => {
   db.Workout.create(body)
     .then((dbWorkout) => {
@@ -48,7 +49,7 @@ router.post("/api/workouts", ({ body }, res) => {
     });
 });
 
-// GET workouts in range to show stats
+// GET route for workouts to show stats
 router.get("/api/workouts/range", (req, res) => {
   db.Workout.aggregate([
     {
@@ -57,7 +58,7 @@ router.get("/api/workouts/range", (req, res) => {
       },
     },
   ])
-  // Add sort function for past seven days
+  // Add sort function for the week
     .sort({ "day": -1 })
     .limit(7)
     .then((dbWorkout) => {
@@ -70,4 +71,5 @@ router.get("/api/workouts/range", (req, res) => {
     });
 });
 
+//exporting module 
 module.exports = router;

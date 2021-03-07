@@ -1,3 +1,4 @@
+// adding required dependencies and files
 let mongoose = require("mongoose");
 let db = require("../models");
 
@@ -6,17 +7,18 @@ mongoose.connect("mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
+// making seeds for data base 
 let workoutSeed = [
   {
     day: new Date().setDate(new Date().getDate()-10),
     exercises: [
       {
-        type: "resistance",
-        name: "Bicep Curl",
-        duration: 20,
+        type: "cardio",
+        name: "mile run",
         weight: 100,
-        reps: 10,
-        sets: 4
+        duration: 20,
+        reps: 1,
+        sets: 1
       }
     ]
   },
@@ -25,11 +27,11 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Lateral Pull",
+        name: "benchpress",
+        weight: 100,
         duration: 20,
-        weight: 300,
         reps: 10,
-        sets: 4
+        sets: 5
       }
     ]
   },
@@ -37,12 +39,12 @@ let workoutSeed = [
     day: new Date().setDate(new Date().getDate()-8),
     exercises: [
       {
-        type: "resistance",
-        name: "Push Press",
-        duration: 25,
+        type: "stretch",
+        name: "toe touch",
+        duration: 5,
         weight: 185,
         reps: 8,
-        sets: 4
+        sets: 5
       }
     ]
   },
@@ -51,9 +53,9 @@ let workoutSeed = [
     exercises: [
       {
         type: "cardio",
-        name: "Running",
+        name: "swimming",
         duration: 25,
-        distance: 4
+        distance: 1 
       }
     ]
   },
@@ -61,76 +63,14 @@ let workoutSeed = [
     day: new Date().setDate(new Date().getDate()-6),
     exercises: [
       {
-        type: "resistance",
-        name: "Bench Press",
+        type: "endurance",
+        name: "crunches",
         duration: 20,
-        weight: 285,
+        weight: 100,
         reps: 10,
-        sets: 4
+        sets: 20
       }
     ]
   },
-  {
-    day: new Date().setDate(new Date().getDate()-5),
-    exercises: [
-      {
-        type: "resistance",
-        name: "Bench Press",
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4
-      }
-    ]
-  },
-  {
-    day: new Date(new Date().setDate(new Date().getDate() - 4)),
-    exercises: [
-      {
-        type: "resistance",
-        name: "Quad Press",
-        duration: 30,
-        weight: 300,
-        reps: 10,
-        sets: 4
-      }
-    ]
-  },
-  {
-    day: new Date(new Date().setDate(new Date().getDate() - 3)),
-    exercises: [
-      {
-        type: "resistance",
-        name: "Bench Press",
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4
-      }
-    ]
-  },
-  {
-    day: new Date(new Date().setDate(new Date().getDate() - 2)),
-    exercises: [
-      {
-        type: "resistance",
-        name: "Military Press",
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4
-      }
-    ]
-  }
 ];
 
-db.Workout.deleteMany({})
-  .then(() => db.Workout.collection.insertMany(workoutSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
