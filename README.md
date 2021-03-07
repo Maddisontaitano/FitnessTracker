@@ -19,11 +19,13 @@
     mongoos, mongodb, express, and morgan 
     
 ## Usage
-    Please go through the following steps to run this application 
+        Please go through the following steps to run this application 
     To use this application effectively, you need to run "npm i" in your terminal to download packages. this application should be used for people who would like to track theyre workouts and have an easy place to jot down new workouts to try
 
 ## Questions
-    For any follow up questions, plese feel free to contact me at my GitHub page: [GitHub Profile](https://github.com/MaddisonTaitano/Fitness Tracker).
+    For any follow up questions, plese feel free to contact me at my GitHub page:
+    
+     [GitHub Profile](https://github.com/MaddisonTaitano/Fitness Tracker).
     
 ## License
     [MIT](https://choosealicense.com/licenses/mit/)
