@@ -1,5 +1,6 @@
 # FitnessTracker
-        This application allows the user to have an effective workout with easy to use software that allows them to track how theyre working out. Allowing the user to easily add workouts to the list or choose from the workouts already seeded in the database for them. At the end, the user can easily go to the stats page and see their data from their exercises in a plethora of different ways.
+
+    This application allows the user to have an effective workout with easy to use software that allows them to track how theyre working out. Allowing the user to easily add workouts to the list or choose from the workouts already seeded in the database for them. At the end, the user can easily go to the stats page and see their data from their exercises in a plethora of different ways.
     
 
 ## Table Of Contents
