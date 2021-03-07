@@ -25,6 +25,15 @@
     used for people who would like to track theyre workouts and have 
     an easy place to jot down new workouts to try
 
+## Code Snippets 
+
+This snippet is in the server.js file. It is the mongo db connection. 
+<img src="/img/fitnesstracker6.bpm" alt="connection to mongo database"/>
+
+This is a snippet of the broswer when you add a new exercise
+<img src="/img/fitnesstracker7.bpm" alt="broswer snippet"/>
+
+
 ## Questions
     For any follow up questions, plese feel free to contact me at my GitHub page:
     
